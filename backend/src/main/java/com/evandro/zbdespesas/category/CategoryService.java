@@ -6,43 +6,42 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
+import com.evandro.zbdespesas.category.exception.CategoryNotFoundException;
+
 @Service
 public class CategoryService {
 
     private static final List<Category> CATEGORIES = new ArrayList<>(List.of(
-        new Category(UUID.randomUUID().toString(), "Groceries"),
-        new Category(UUID.randomUUID().toString(), "Utilities")
+        Category.create("Groceries"),
+        Category.create("Utilities")
     ));
 
     public List<Category> listCategories() {
         return CATEGORIES;
     }
 
-    public Category createCategory(Category category) {
-        CategoryValidation.validateCategoryName(category.getName());
-        category.setId(UUID.randomUUID().toString());
-        CATEGORIES.add(category);
-        return category;
+    public Category createCategory(String name) {
+        Category newCategory = Category.create(name);
+        CATEGORIES.add(newCategory);
+        return newCategory;
     }
 
-    public Category updateCategory(Category category) {
-        CategoryValidation.validateCategory(category);
-        Category existingCategory = findCategoryById(category.getId());
-        existingCategory.setName(category.getName());
+    public Category updateCategory(UUID id, String name) {
+        Category existingCategory = findCategoryById(id);
+        existingCategory.rename(name);
         return existingCategory;
     }
 
-    public Category findCategoryById(String id) {
+    public void deleteCategory(UUID id) {
+        Category category = findCategoryById(id);
+        CATEGORIES.remove(category);
+    }
+
+    public Category findCategoryById(UUID id) {
         return CATEGORIES.stream()
             .filter(c -> c.getId().equals(id))
             .findFirst()
-            .orElseThrow(() -> new IllegalArgumentException("Categoria não encontrada"));
-    }
-
-    public void deleteCategory(String id) {
-        CategoryValidation.validateCategoryId(id);
-        Category category = findCategoryById(id);
-        CATEGORIES.remove(category);
+            .orElseThrow(() -> new CategoryNotFoundException(id));
     }
 
 }
