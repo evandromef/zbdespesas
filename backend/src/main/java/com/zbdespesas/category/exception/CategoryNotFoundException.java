@@ -1,4 +1,4 @@
-package com.evandro.zbdespesas.category.exception;
+package com.zbdespesas.category.exception;
 
 import java.util.UUID;
 

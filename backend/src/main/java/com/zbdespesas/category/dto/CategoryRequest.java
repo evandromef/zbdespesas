@@ -1,6 +1,6 @@
-package com.evandro.zbdespesas.category.dto;
+package com.zbdespesas.category.dto;
 
-import com.evandro.zbdespesas.category.Category;
+import com.zbdespesas.category.Category;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

@@ -1,9 +1,9 @@
-package com.evandro.zbdespesas.category;
+package com.zbdespesas.category;
 
 import java.util.Objects;
 import java.util.UUID;
 
-import com.evandro.zbdespesas.category.exception.InvalidCategoryException;
+import com.zbdespesas.category.exception.InvalidCategoryException;
 
 import lombok.AccessLevel;
 import lombok.Getter;

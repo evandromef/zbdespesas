@@ -1,8 +1,8 @@
-package com.evandro.zbdespesas.category.dto;
+package com.zbdespesas.category.dto;
 
 import java.util.UUID;
 
-import com.evandro.zbdespesas.category.Category;
+import com.zbdespesas.category.Category;
 
 public record CategoryResponse(
     UUID id,

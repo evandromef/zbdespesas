@@ -1,4 +1,4 @@
-package com.evandro.zbdespesas.category;
+package com.zbdespesas.category;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.evandro.zbdespesas.category.exception.CategoryNotFoundException;
+import com.zbdespesas.category.exception.CategoryNotFoundException;
 
 @Service
 public class CategoryService {

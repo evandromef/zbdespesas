@@ -1,4 +1,4 @@
-package com.evandro.zbdespesas.category;
+package com.zbdespesas.category;
 
 import java.net.URI;
 import java.util.List;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.evandro.zbdespesas.category.dto.CategoryRequest;
-import com.evandro.zbdespesas.category.dto.CategoryResponse;
+import com.zbdespesas.category.dto.CategoryRequest;
+import com.zbdespesas.category.dto.CategoryResponse;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

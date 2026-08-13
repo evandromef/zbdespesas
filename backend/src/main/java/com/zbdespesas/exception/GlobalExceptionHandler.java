@@ -1,4 +1,4 @@
-package com.evandro.zbdespesas.exception;
+package com.zbdespesas.exception;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import com.evandro.zbdespesas.category.exception.CategoryNotFoundException;
-import com.evandro.zbdespesas.category.exception.InvalidCategoryException;
+import com.zbdespesas.category.exception.CategoryNotFoundException;
+import com.zbdespesas.category.exception.InvalidCategoryException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
